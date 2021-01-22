@@ -38,9 +38,7 @@ const CurrencyRates = () => {
                 </div>
                 {currencyItems.map((i, index) => {
                     const onSetFav = (e: React.MouseEvent<HTMLParagraphElement>) => {
-                        dispatch(setFavoritesAC(e.currentTarget.innerText))
-                        debugger
-                        console.log(e.currentTarget.innerText)
+                            dispatch(setFavoritesAC(e.currentTarget.innerText))
                     }
                     return (
                         <div key={index} className={cl.item}>

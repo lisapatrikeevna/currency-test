@@ -28,9 +28,9 @@ export const currencyRatesReducer = (state = initialState, action: currencyRates
         items: action.payload}
     }
     case 'SET_FAVORITES': {
-      return {...state,names: [...state.names, action.payload]
+      return {...state, names:[...state.names, action.payload]
+        }
       }
-    }
     default:
       return state;
   }
@@ -39,24 +39,20 @@ const getCurrencyAC=(payload:CurrencyType[])=>({type:'GET_CURRENCY',payload}as c
 export const setFavoritesAC=(payload:string)=>({type: 'SET_FAVORITES',payload}as const)
 export const getCurrencyTC=()=>(dispatch:Dispatch)=>{
   Currency.get().then(res=>{
-    // let ollData = res.data
     dispatch(getCurrencyAC(res.data))
     let newData:Array<CurrencyTypeForCalc> = res.data.map((el:any)=>{
       return {currencyName: el.ccy, buyRate: el.buy, sellRate: el.sale} as CurrencyTypeForCalc
     })
     dispatch(getCurrencyForCalcAC(newData))
-    debugger
-    // let mainCurrency = res.data.find((el:any)=> el.base_ccy  === el.base_ccy   )
     let mainCurrency:string = res.data.some((el:any,i:number)=>{
       if(i===0){
         if(el.base_ccy){
-          return el
+          return el.base_ccy
         }
-        // return el.base_ccy
       }
     })
     dispatch(getStartMainCurrencyAC(mainCurrency))
-    // console.log(mainCurrency);
+    console.log(mainCurrency);
 
   })
 }
