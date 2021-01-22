@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {Currency} from "./Api";
-import {CurrencyTypeForCalc, getCurrencyForCalcAC} from "./currencyReducer";
+import {CurrencyTypeForCalc, getCurrencyForCalcAC, getStartMainCurrencyAC} from "./currencyReducer";
 
 export type CurrencyType = {
   ccy:string
@@ -39,11 +39,24 @@ const getCurrencyAC=(payload:CurrencyType[])=>({type:'GET_CURRENCY',payload}as c
 export const setFavoritesAC=(payload:string)=>({type: 'SET_FAVORITES',payload}as const)
 export const getCurrencyTC=()=>(dispatch:Dispatch)=>{
   Currency.get().then(res=>{
-    let ollData = res.data
-    dispatch(getCurrencyAC(ollData))
+    // let ollData = res.data
+    dispatch(getCurrencyAC(res.data))
     let newData:Array<CurrencyTypeForCalc> = res.data.map((el:any)=>{
       return {currencyName: el.ccy, buyRate: el.buy, sellRate: el.sale} as CurrencyTypeForCalc
     })
     dispatch(getCurrencyForCalcAC(newData))
+    debugger
+    // let mainCurrency = res.data.find((el:any)=> el.base_ccy  === el.base_ccy   )
+    let mainCurrency:string = res.data.some((el:any,i:number)=>{
+      if(i===0){
+        if(el.base_ccy){
+          return el
+        }
+        // return el.base_ccy
+      }
+    })
+    dispatch(getStartMainCurrencyAC(mainCurrency))
+    // console.log(mainCurrency);
+
   })
 }
