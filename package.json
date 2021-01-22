@@ -24,7 +24,7 @@
     "redux-thunk": "^2.3.0",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "http://lisapatrikeevna.github.io/test-currency",
+  "homepage": "http://lisapatrikeevna.github.io/currency-test",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
