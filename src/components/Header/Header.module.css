@@ -1,0 +1,15 @@
+.item {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav {
+    height: 80px;
+    background: salmon;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.active {
+color: #79e181;
+}

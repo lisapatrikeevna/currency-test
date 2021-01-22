@@ -1,0 +1,66 @@
+.container {
+    width: 40vw;
+    margin: 50px auto 0;
+}
+.currency {
+    padding: 0 15px;
+    border: 2px solid #79e181;
+    border-radius: 10px;
+    background-color: rgba(249, 247, 246, 0.9);
+}
+.currency h2 {
+    text-align: center;
+}
+.currencyNames {
+    display: flex;
+}
+.currencyNames p {
+    padding: 7px 0;
+}
+.currency ul {
+    list-style: none;
+    display: inline;
+}
+
+.currency li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.currencyAction {
+    display: flex;
+    justify-content: space-between;
+}
+
+.currencyAction span {
+    width: 40%;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #79e181;
+    border-radius: 10px;
+    color: #79e181;
+    cursor: pointer;
+}
+.currencyAction span.active {
+    color: white;
+    background-color: #79e181;
+}
+.currencies {
+    padding: 5px 10px;
+    border: 2px solid #79e181;
+    color: #79e181;
+}
+.activeCurrency {
+    background-color: #79e181;
+    color: white;
+}
+.fields label {
+    display: block;
+    margin-bottom: 20px;
+}
+.fields label input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}

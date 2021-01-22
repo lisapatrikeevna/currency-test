@@ -1,0 +1,49 @@
+.wrap{
+    display: flex;
+}
+.wrapCurrency{
+    display: flex;
+    justify-content: space-evenly;
+}
+.wrapNum{
+    display: flex;
+    justify-content: space-between;
+}
+.blockLeft{
+    padding: 0 12px;
+    height: 107px;
+}
+.center{
+    width: fit-content;
+    margin: 33px auto;
+    border: 2px solid #79e181;
+    border-radius: 10px;
+    background-color: rgba(249, 247, 246, 0.9);
+}
+.item{
+    /*padding: 0 10px;*/
+    /*width: 200px;*/
+}
+.light{
+    background: #e18479;
+    padding: 8px 17px;
+}
+.dark{
+    background: #79e181;
+    padding: 8px 17px;
+}
+button{
+    border-radius: 5px;
+    margin: 10px 20px 30px;
+    color:#fff;
+    border: none;
+}
+.any{
+    padding: 8px 17px;
+}
+.first{
+
+}
+.next{
+
+}
