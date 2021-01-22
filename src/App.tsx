@@ -10,7 +10,7 @@ function App() {
         <div className={"App"}>
             <Header/>
             <Switch>
-                <Route path={'currency-test/'} exact render={()=><Redirect to={PATH.CURRENSYRATES}/>}/>
+                <Route path={'/'} exact render={()=><Redirect to={PATH.CURRENSYRATES}/>}/>
                 <Route path={PATH.CALCULATOR} render={()=><CurrencyEContainer/>}/>
                 <Route path={PATH.CURRENSYRATES} render={()=><CurrencyRates/>}/>
             </Switch>
