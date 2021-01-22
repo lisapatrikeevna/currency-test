@@ -29,10 +29,9 @@ const CurrencyRates = () => {
     return (
         <div className={cl.center}>
             <div>
-                <p>favorites:{ favorites.map((i,index)=><span key={`{i.name}+ {index}`}>{i}</span>)}</p>
+                <p>favorites:{ favorites.map((i,index)=><span key={`{i.name}+ {index}`}>{i} ,</span>)}</p>
             </div>
             <div className={cl.wrap}>
-
                 <div className={cl.blockLeft}>
                     <p>currency: </p>
                     <p style={{paddingTop: '22px'}}>exchange: </p>
