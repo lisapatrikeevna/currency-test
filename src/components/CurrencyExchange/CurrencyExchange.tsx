@@ -13,10 +13,9 @@ type CurrencyExchangePropsType = {
     changeAction: (e: React.MouseEvent<HTMLSpanElement>) => void;
     changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void;
 };
-const CurrencyExchange: React.FunctionComponent<CurrencyExchangePropsType> = (
-    {currenciesName, currentCurrency,mainCurrency, currencyRate, isBuying, amountOfBYN, amountOfCurrency, changeCurrencyField, changeAction, changeCurrentCurrency,}
-) => {
-
+const CurrencyExchange: React.FunctionComponent<CurrencyExchangePropsType> = (props) => {
+    const{currenciesName, currentCurrency,mainCurrency, currencyRate, isBuying,
+        amountOfBYN, amountOfCurrency, changeCurrencyField, changeAction, changeCurrentCurrency,} = props
     const viewCurrency = isBuying ? (
         <>
             <label>

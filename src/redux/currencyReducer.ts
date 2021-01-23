@@ -52,11 +52,15 @@ export const currencyReducer = (state: CurrencyState = initialState, action: Cur
       return {
       ...state,
         ...action.payload,
+        amountOfCurrency: '',
+        mainCurrency: '',
     }
     case ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY:
       return {
         ...state,
         ...action.payload,
+        amountOfCurrency: '',
+        mainCurrency: '',
       }
     case ACTIONS_TYPE.GET_START_MAIN_CURRENCY:
       return {
